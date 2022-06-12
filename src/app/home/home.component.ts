@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { style, state, animate, transition, trigger, query, stagger } from '@angular/animations';
+import { ApiService } from "../service/api.service";
 
 @Component({
   selector: 'app-home',
@@ -25,10 +26,30 @@ import { style, state, animate, transition, trigger, query, stagger } from '@ang
   ]
 })
 export class HomeComponent implements OnInit {
+  accounts: any[] = [];
+  account = {
+    customerFirstName: 'Annalis',
+    customerLastName: 'Kirwa',
+    customerIdentificationNumber: '1234',
+    customerPhoneNumber: '0000',
+    accountNumber: '63666',
+    accountName: 'Ann'
+}
 
-  constructor() { }
+  constructor(
+    private apiService: ApiService
+  ) { }
 
   ngOnInit(): void {
+    this.getAllAccounts();
+  }
+  getAllAccounts():void{
+    this.apiService.getAllAccounts().subscribe((res:any)=>{
+      this.accounts =res;
+      console.log(res);},
+      (error:any)=>{
+        console.log("no account found")
+      })
   }
 
 }
