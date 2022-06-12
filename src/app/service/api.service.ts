@@ -19,6 +19,9 @@ export class ApiService {
     return this.httpClient.get<any>(this.baseUrl + 'account');
   }
   createCustomer(customerObj:any):Observable<any>{
-    return this.httpClient.post<any>(this.baseUrl + +'customer', customerObj);
+    return this.httpClient.post<any>(this.baseUrl  +'customer', customerObj);
+  }
+  createAccount(accountObj:any):Observable<any>{
+    return this.httpClient.post<any>(this.baseUrl + 'account',accountObj);
   }
 }
