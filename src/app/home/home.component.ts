@@ -26,14 +26,16 @@ import { ApiService } from "../service/api.service";
   ]
 })
 export class HomeComponent implements OnInit {
+  showForm = false;
+  createAccountSuccess = false;
+  createAccountFail = false;
   accounts: any[] = [];
   account = {
-    customerFirstName: 'Annalis',
-    customerLastName: 'Kirwa',
-    customerIdentificationNumber: '1234',
-    customerPhoneNumber: '0000',
-    accountNumber: '63666',
-    accountName: 'Ann'
+    accountNumber: "63666",
+    accountName: "Ann",
+    customer:{
+        customerId: 1
+    }
 }
 
   constructor(
@@ -50,6 +52,34 @@ export class HomeComponent implements OnInit {
       (error:any)=>{
         console.log("no account found")
       })
+  }
+  toggleForm():void{
+    this.showForm = !this.showForm;
+  }
+  createAccount():void{
+    this.apiService.createAccount(this.account).subscribe((res:any)=>{
+      this.createAccountSuccess = true;
+      this.createAccountFail = false;
+
+      this.account = {
+        accountNumber: "63666",
+        accountName: "Ann",
+        customer:{
+            customerId: 1
+        }};
+        this.showForm = false;
+    },
+    (error:any)=>{
+      this.createAccountSuccess = false;
+      this.createAccountFail = true;
+    },
+    ()=>{
+      this.getAllAccounts();
+      setTimeout(()=>{
+        this.createAccountSuccess = false;
+        this.createAccountFail = true;
+      }, 5000)
+    })
   }
 
 }
