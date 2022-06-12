@@ -13,4 +13,18 @@
           <span *ngIf="showForm" [@fadeIn]>Back to Accounts List</span>
         </button>
       </div>
+      <!-- accounts list -->
+      <div class = "row" *ngIf="!showForm && accounts.length" [@fadeInGrow]>
+          <div class = "col-md-3" *ngFor="let account of accounts">
+              <div class = "card">
+                  <h5>Acc. Name {{account.accountName}}</h5>
+                  <span class="d-block">Acc Number: {{account.accountNumber}}</span>
+                  <span class="d-block">Customer name: {{account.customerFirstName}} {{account.customerLastName}}</span>
+                  <span class="d-block">Customer ID: {{account.customerIdentificationNumber}}</span>
+                  <span class="d-block">Customer phone number: {{account.customerPhoneNumber}}</span>
+              </div>
+          </div>
+      </div>
+      <!-- account creation form -->
+      <div class = "row justify-content-center" *ngIf = "showForm" [@fadeIn]></div>
 </div>
