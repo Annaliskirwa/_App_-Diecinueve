@@ -1,0 +1,34 @@
+
+.app {
+    padding-top: 5vh;
+    
+    .fs-2{
+        text-align: center;
+        font-size: large;
+        color: crimson;
+    }
+
+    .btn-success{
+        background-color: hsl(154, 59%, 51%) !important;
+        text-align: center;
+        width: 80%;
+        margin-top: 25%;
+        border-color: hsl(154, 59%, 51%) !important;
+        color: crimson;
+    }
+    .btn-success:hover{
+       background-color:hsl(246, 25%, 77%)  !important;
+    }
+    .btn-danger{
+        background-color: hsl(2, 82%, 48%) !important;
+        text-align: center;
+        width: 80%;
+        margin-top: 25%;
+        border-color: hsl(2, 82%, 48%) !important;
+        color: (154, 59%, 51%);
+    }
+    .btn-danger:hover{
+       background-color:hsl(246, 25%, 77%)  !important;
+    }
+
+}
