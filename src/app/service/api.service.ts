@@ -12,4 +12,7 @@ export class ApiService {
   constructor(
     private httpClient:HttpClient
   ) { }
+  getAllCustomers():Observable<any>{
+    return this.httpClient.get<any>(this.baseUrl + 'customer');
+  }
 }
