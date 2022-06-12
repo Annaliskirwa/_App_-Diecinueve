@@ -8,5 +8,5 @@
 <ng-template #loggedOut>
   <button (click)="auth.loginWithRedirect()">Log in</button>
 </ng-template>
-<app-login  *ngIf="auth.user$ | async as user"></app-login>
+<app-home  *ngIf="auth.user$ | async as user"></app-home>
 <router-outlet></router-outlet>
