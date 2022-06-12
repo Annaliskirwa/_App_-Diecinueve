@@ -15,4 +15,10 @@ export class ApiService {
   getAllCustomers():Observable<any>{
     return this.httpClient.get<any>(this.baseUrl + 'customer');
   }
+  getAllAccounts():Observable<any>{
+    return this.httpClient.get<any>(this.baseUrl + 'account');
+  }
+  createCustomer(customerObj:any):Observable<any>{
+    return this.httpClient.post<any>(this.baseUrl + +'customer', customerObj);
+  }
 }
