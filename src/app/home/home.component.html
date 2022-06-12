@@ -42,6 +42,9 @@
                     <label for = "customerId">Customer Id</label>
                     <input class = "form-control" type = "text" name="customerId" [(ngModel)] = "account.customer.customerId">
                 </div>
+                <div class="mt-3">
+                    <button class="btn btn-submit" (click)="createAccount()" [disabled]="!account.accountNumber || !account.accountName || !account.customer.customerId">Submit Acc Details</button>
+                  </div>
               </form>
           </div>
       </div>
