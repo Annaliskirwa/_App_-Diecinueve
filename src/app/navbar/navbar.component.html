@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="auth.user$ | async as user">
     <a class="navbar-brand"><img class="img"
             src="https://ke.kcbgroup.com/templates/corporate/images/logo.svg" /><b>KCBGroup</b></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
