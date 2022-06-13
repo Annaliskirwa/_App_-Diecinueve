@@ -1,1 +1,20 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand"><img class="img"
+            src="https://ke.kcbgroup.com/templates/corporate/images/logo.svg" /><b>KCBGroup</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" routerLink="home" routerLinkActive="active">Home</a>
+            <a class="nav-item nav-link" routerLink="customer" routerLinkActive="active">Customer</a>
+            <a class="nav-item nav-link" routerLink="account" routerLinkActive="active">Account</a>
+            <a class="nav-item nav-link" routerLink="customer" routerLinkActive="active">
+                <!-- <button class="btn btn-danger" (click)="auth.logout({ returnTo: document.location.origin })">
+                    Log out
+                  </button> -->
+            </a>
+        </div>
+    </div>
+</nav>
