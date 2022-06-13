@@ -10,13 +10,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SplashscreenComponent } from './splashscreen/splashscreen.component';
+import { AccountComponent } from './account/account.component';
+import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    SplashscreenComponent
+    SplashscreenComponent,
+    AccountComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
