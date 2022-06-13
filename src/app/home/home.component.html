@@ -1,0 +1,18 @@
+
+<section *ngIf="auth.user$ | async as user" class="container">
+    <div id="text" class="d-flex align-items-center justify-content-center">
+      <div class="text-center ">
+        <h1 id="welcome">KCBGroup Customer Onboarding</h1>
+        <div class="description">
+          <p>What do you want to do today?</p>
+          <ul>
+          <li><a class="nav-item nav-link" routerLink="customer" routerLinkActive="active">Create Customer</a></li>
+          <li><a class="nav-item nav-link" routerLink="customer" routerLinkActive="active">View Customers</a></li>
+          <li><a class="nav-item nav-link" routerLink="account" routerLinkActive="active">Create Account</a></li>
+          <li><a class="nav-item nav-link" routerLink="account" routerLinkActive="active">View Accounts</a></li>
+          </ul>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </section>
