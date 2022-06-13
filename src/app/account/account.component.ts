@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { style, state, animate, transition, trigger, query, stagger } from '@angular/animations';
 import { ApiService } from "../service/api.service";
+import { AuthService } from '@auth0/auth0-angular';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-account',
@@ -38,7 +40,8 @@ export class AccountComponent implements OnInit {
     }
 }
 
-  constructor(
+  constructor(public auth: AuthService,
+    @Inject(DOCUMENT) public document: Document,
     private apiService: ApiService
   ) { }
 

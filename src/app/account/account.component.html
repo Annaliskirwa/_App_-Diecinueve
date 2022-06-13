@@ -1,4 +1,4 @@
-<div class = "home">
+<div class = "home" *ngIf="auth.user$ | async as user">
     <div>
         <p class="fs-2">Accounts List</p>
     </div>
