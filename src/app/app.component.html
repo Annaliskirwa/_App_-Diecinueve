@@ -3,7 +3,15 @@
 <div class="container app">
 
   <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
-    
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-5"></div>
+      <div class="col-md-2">
+        <button class="btn btn-danger" (click)="auth.logout({ returnTo: document.location.origin })">
+          Log out
+        </button>
+      </div>
+    </div>
   </ng-container>
 
   <ng-template #loggedOut>
