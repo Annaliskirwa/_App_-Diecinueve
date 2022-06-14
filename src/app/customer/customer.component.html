@@ -1,3 +1,12 @@
-<div *ngIf="auth.user$ | async as user">
-    customer
+<div *ngIf="auth.user$ | async as user" class = "home">
+    <div>
+        <p class="fs-2">Customers List</p>
+    </div>
+    <!-- alerts -->
+    <div class = "alert" *ngIf="createCustomerFail || createCustomerSuccess"
+    [ngClass]="{'alert-danger': createCustomerFail, 'alert-success':createCustomerSuccess}"
+    [@fadeIn]>
+    <span *ngIf="createCustomerSuccess">The customer has been created succesfully</span>
+    <span *ngIf="createCustomerFail">Customer could not be created. Try again later</span>
+    </div>
 </div>
