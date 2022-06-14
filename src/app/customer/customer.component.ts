@@ -56,5 +56,33 @@ export class CustomerComponent implements OnInit {
       console.log("no customer found")
     })
   }
+  toggleForm():void{
+    this.showForm = !this.showForm;
+  }
+  createCustomer():void{
+    this.apiService.createCustomer(this.customer).subscribe((res:any)=>{
+      this.createCustomerSuccess = true;
+      this.createCustomerFail = false;
+
+      this.customer = {
+        firstName: "Annalis",
+        lastName: "Kirwa",
+        identificationNumber: "1234",
+        phoneNumber: "0000"
+      };
+      this.showForm = false;
+    },
+    (error:any)=>{
+      this.createCustomerSuccess = false;
+      this.createCustomerFail = true;
+    },
+    ()=>{
+      this.getAllCustomers();
+      setTimeout(()=>{
+        this.createCustomerSuccess = false;
+        this.createCustomerFail = true;
+      }, 5000)
+    })
+  }
 
 }
