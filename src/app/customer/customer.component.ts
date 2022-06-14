@@ -28,6 +28,16 @@ import { DOCUMENT } from '@angular/common';
   ]
 })
 export class CustomerComponent implements OnInit {
+  showForm = false;
+  createCustomerSuccess = false;
+  createCustomerFail = false;
+  customers: any[] = [];
+  customer = {
+        firstName: "Annalis",
+        lastName: "Kirwa",
+        identificationNumber: "1234",
+        phoneNumber: "0000"
+  }
 
   constructor(public auth: AuthService,
     @Inject(DOCUMENT) public document: Document){}
