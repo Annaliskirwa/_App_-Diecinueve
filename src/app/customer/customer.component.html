@@ -9,4 +9,22 @@
     <span *ngIf="createCustomerSuccess">The customer has been created succesfully</span>
     <span *ngIf="createCustomerFail">Customer could not be created. Try again later</span>
     </div>
+
+    <div class="d-flex justify-content-end mb-2">
+        <button class="btn btn-create-new" (click)="toggleForm()">
+          <span *ngIf="!showForm" [@fadeIn]>Create Customer</span>
+          <span *ngIf="showForm" [@fadeIn]>Back to Customer List</span>
+        </button>
+      </div>
+
+      <!-- customer list -->
+      <div class = "row" *ngIf="!showForm && customers.length" [@fadeInGrow]>
+        <div class = "col-md-3" *ngFor="let customer of customers">
+            <div class = "card">
+                <h5>Customer Name {{customer.firstName }} {{customer.lastName}}</h5>
+                <span class="d-block">Identification Number: {{customer.identificationNumber}}</span>
+                <span class="d-block">Phone Number: {{customer.phoneNumber}}</span>
+            </div>
+        </div>
+    </div>
 </div>
