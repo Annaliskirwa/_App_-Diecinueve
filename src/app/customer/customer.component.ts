@@ -7,7 +7,7 @@ import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
-  styleUrls: ['./customer.component.css'],
+  styleUrls: ['./customer.component.scss'],
   animations: [
     trigger('fadeIn', [
       transition(':enter', [   // :enter is alias to 'void => *'
