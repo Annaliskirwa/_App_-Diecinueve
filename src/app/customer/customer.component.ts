@@ -39,11 +39,22 @@ export class CustomerComponent implements OnInit {
         phoneNumber: "0000"
   }
 
-  constructor(public auth: AuthService,
+  constructor(public apiService:ApiService,
+    public auth: AuthService,
     @Inject(DOCUMENT) public document: Document){}
 
 
   ngOnInit(): void {
+    this.getAllCustomers();
+  }
+  getAllCustomers():void{
+    this.apiService.getAllCustomers().subscribe((res:any)=>{
+      this.customers = res;
+      console.log(res);
+    },
+    (error:any)=>{
+      console.log("no customer found")
+    })
   }
 
 }
