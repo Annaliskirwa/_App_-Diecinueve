@@ -33,10 +33,9 @@ export class AccountComponent implements OnInit {
   createAccountFail = false;
   accounts: any[] = [];
   account = {
-    accountNumber: "63666",
     accountName: "Ann",
     customer:{
-        customerId: 1
+      identificationNumber: 1234
     }
 }
 
@@ -65,10 +64,9 @@ export class AccountComponent implements OnInit {
       this.createAccountFail = false;
 
       this.account = {
-        accountNumber: "63666",
         accountName: "Ann",
         customer:{
-            customerId: 1
+          identificationNumber: 1234
         }};
         this.showForm = false;
     },
