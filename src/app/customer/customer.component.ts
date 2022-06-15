@@ -36,7 +36,8 @@ export class CustomerComponent implements OnInit {
         firstName: "Annalis",
         lastName: "Kirwa",
         identificationNumber: "1234",
-        phoneNumber: "0000"
+        phoneNumber: "0000",
+        email: "annaliskirwa@gmail.com"
   }
 
   constructor(public apiService:ApiService,
@@ -68,7 +69,8 @@ export class CustomerComponent implements OnInit {
         firstName: "Annalis",
         lastName: "Kirwa",
         identificationNumber: "1234",
-        phoneNumber: "0000"
+        phoneNumber: "0000",
+        email: "annaliskirwa@gmail.com"
       };
       this.showForm = false;
     },
